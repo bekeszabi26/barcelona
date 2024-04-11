@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--ki ne felejtsd a legfontosabb direktíva megadását!!! ng-app -->
+<html lang="en" ng-app="barcelonaApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- bootstrap css -->
+  <link rel="stylesheet" href="style.css">
+   <!-- fontos, hogy bootstrap css után helyezd el a saját css-ed, mert akkor tudod felül írni! +!important használata esetenként -->
+  <link rel="stylesheet" href="SajatStyle.css">
+  <!--Nagyon fontos a Frontend feladathoz, az AngularJs könyvtár csatolása, hiszen enélkül nem fog működni!!!-->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <title>Document</title>
+</head>
+<!--ki ne felejtsd a másik legfontosabb direktíva megadását!!! ng-contorller -->
+<body ng-controller="barcelonaController">
+  <div class="container">
+<!--Navbar-->
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">History</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Monuments</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled">Hotels</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled">Content</a>
+        </li>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" ng-model="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!--Navbar end-->
+
+<header>
+  <h1>Barcelona</h1>
+</header>
+<main>
+  <!--Card; nagyon fontos a .row osztályú konténer létre hozása, mivel ez segít abban, hogy egy sorba kerüljenek az adatok-->
+    <div class="row p-2">
+      <!--a következő fontos osztály: .col mint oszlop; col-lg-4 ez azt jelenti, hogy a 12 gridből, 4 gridet foglal le egy elem, 
+      vagyis 12/4 = 3 oszlop fog megjelenni; col-md-6 ez azt jelenti, hogy tabletes nézetben 2 oszlop jelenik meg, mivel 12/6 =2 ;
+    a col-sm-12 biztosítja, hogy mobilos nézetben egymás alatt jelenjenek meg a kártyák, mivel 12 gridet foglalnak el, 
+    és a Bootstrapnek 12 gridje van.
+  Fontos Angular direktívák: ng-repeat; filter-->
+      <div class="col col-sm-12 col-md-6 col-lg-4 d-flex align-items-stretch " ng-repeat="b in barcelona | filter:Search">
+        <div class="card mb-2 border border-dark" >
+          <!-- figyelj az útvonal megadására; ha a kép kiterjesztése nincs ott, hozzá kell fűzni-->
+          <img src="img/{{b.img}}.jpg" class="card-img-top" alt="{{b.title}}">
+          <div class="card-body">
+            <!-- iterátor.kulcs neve, ami vissza tér az értékével-->
+            <h5 class="card-title">{{b.title}}</h5>
+            <p class="card-text">{{b.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Card end-->
+</main>
+<footer>
+  <table >
+    <tr>
+      <th>Company</th>
+      <th>Contact</th>
+      <th>Country</th>
+    </tr>
+    <tr>
+      <td>Alfreds Futterkiste</td>
+      <td>Maria Anders</td>
+      <td>Germany</td>
+    </tr>
+    <tr>
+      <td>Centro comercial Moctezuma</td>
+      <td>Francisco Chang</td>
+      <td>Mexico</td>
+    </tr>
+  </table>
+  
+</footer>
+</div>
+  <!-- fontos, első az AngularJs könyvtár script csatolása, és utána jön a sajátod!!!-->
+  <script src="app.js"></script>
+</body>
+</html>

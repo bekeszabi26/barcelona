@@ -1,0 +1,33 @@
+body{
+    background: rgb(0, 47, 255) !important;
+}
+.container{
+    width: 1200px;
+}
+header{
+    background-image: url(../img/header.PNG);
+    height: 400px;
+    background-size: cover;
+    display: flex;
+    text-align: center;
+    justify-content:center;
+    align-items: center;
+}
+h1
+{
+    color: white;
+}
+footer{
+    background: #000;
+    color: white;
+}
+table{
+    width: 100%;
+  
+}
+main{
+    background: lightblue;
+}
+.card-text{
+    text-align: justify !important;
+}

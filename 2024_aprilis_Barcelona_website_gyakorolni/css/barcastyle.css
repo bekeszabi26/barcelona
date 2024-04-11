@@ -1,0 +1,21 @@
+
+
+header
+{
+    background-image: url(../img/header.PNG);
+    height: 400px;
+    background-size: cover;
+    display: flex;
+    text-align: center;
+    justify-content:center;
+    align-items: center;
+   
+
+}
+.container{
+    width: 1200px;
+}
+.card
+{
+    
+}

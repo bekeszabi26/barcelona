@@ -1,0 +1,120 @@
+:root{
+    --sotetkek:#03045E;
+    --kozepessotetkek:rgb(0, 119, 182);
+    --kozepkek:rgb(0, 180, 216);
+    --vilagosabbkek:rgb(144, 224, 239);
+    --legvilagosabbkek: rgb(202, 240, 248);
+
+}
+body{
+    background-color: var(--sotetkek);
+    display: flex;
+  justify-content: center;
+}
+.wrapper{
+    width: 1200px;
+    background-color: var(--kozepessotetkek);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   border-radius: 20px;
+}
+/*------------------------------------------
+Nav formázása
+--------------------------------------------*/
+
+ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+li{
+    padding:1em;
+}
+a{
+    background-color: var(--legvilagosabbkek);
+    padding:1em;
+    margin:.2em;
+    color:var(--sotetkek);
+    border-radius: 0 20px;
+    box-shadow: 0 0 10px var(--legvilagosabbkek);
+    text-decoration: none;
+}
+a:hover{
+    background-color: var(--vilagosabbkek);
+    text-decoration:underline
+}
+/*------------------------------------------
+Header formázása
+--------------------------------------------*/
+header{
+    background-image: url("../img/header.png");
+    background-size: cover;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Media query for tablet */
+@media (max-width: 768px) {
+    header {
+        height: 300px;
+    }
+}
+
+/* Media query for mobile */
+@media (max-width: 480px) {
+    header {
+        height: 200px;
+    }
+}
+header h1{
+    text-shadow: 0 0 10px var(--sotetkek);
+     color:var(--legvilagosabbkek);
+     font-size: 5vw;
+ }
+/*------------------------------------------
+Main formázása
+--------------------------------------------*/
+main{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    
+}
+/* Media query for tablet */
+@media (max-width: 768px) {
+    main {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+/* Media query for mobile */
+@media (max-width: 480px) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+article{
+    margin: 5px;
+    background-color: var(--legvilagosabbkek);
+    border-radius: 20px;
+    box-shadow: 0 0 10px var(--legvilagosabbkek);
+}
+article img{
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+}
+article h3, p{
+    margin: 10px
+}
+p{
+    text-align: justify;
+    text-indent: 30px;
+}
+/*------------------------------------------
+Footer formázása
+--------------------------------------------*/
+footer{
+    
+}
